@@ -1,0 +1,29 @@
+.grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  --width: 100%;
+  --margin: 10px;
+
+  background-color: red;
+  display: inline-block;
+  flex-grow: 1;
+  height: 50px;
+  margin: 5px;
+  width: var(--width);
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cell {
+    --width: calc(100% / 2 - var(--margin));
+  }
+}
+
+@media (min-width: 1024px) {
+  .cell {
+    --width: calc(100% / 3 - var(--margin));
+  }
+}
